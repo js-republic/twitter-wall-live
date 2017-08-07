@@ -1,4 +1,4 @@
-import { Tweet } from "../models/tweet"
+import { Tweet } from "../../models/tweet"
 import { Component, Input, OnInit, NgZone } from "@angular/core"
 import { Observable } from "rxjs/Observable"
 
@@ -14,7 +14,7 @@ export default class tweetsStream implements OnInit {
   ngOnInit() {
     this.tweet.subscribe(tweet => {
       this.zone.run(() => {
-        this.tweets = this.tweets.concat(tweet)
+        this.tweets = [tweet]
       })
     })
   }

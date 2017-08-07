@@ -1,0 +1,7 @@
+<form *ngIf="model" (ngSubmit)="onSubmit(e)" #e="ngForm">
+  <div>
+    <label for="hashtag">Hashtag</label>
+    <input [(ngModel)]="model.hashtag" name="hashtag" type="text" class="form-control" id="hashtag" required>
+  </div>
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,20 @@
+<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="9.46659564e-16 20.1320625 9.46659564e-16 0.4998125 17.1356422 0.4998125 17.1356422 20.1320625 0 20.1320625"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy" transform="translate(-210.000000, -370.000000)">
+            <g id="Page-1" transform="translate(210.000000, 369.000000)">
+                <g id="Group-3" transform="translate(0.000000, 0.818194)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M5.49619266,14.774375 L5.49619266,3.9428125 L7.97738532,6.8509375 L9.14366972,5.8581875 L4.57142202,0.4998125 L-0.000137614679,5.8581875 L1.16545872,6.8509375 L3.96385321,3.570875 L3.96385321,14.774375 C3.96385321,17.7285625 6.37004587,20.1320625 9.32669725,20.1320625 L17.1356422,20.1320625 L17.1356422,18.601 L9.32669725,18.601 C7.215,18.601 5.49619266,16.8843125 5.49619266,14.774375" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

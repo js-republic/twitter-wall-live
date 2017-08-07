@@ -1,0 +1,4 @@
+<div class="tweets-stream">
+  <tweet class="tweet" *ngFor="let tweet of tweets" [tweet]="tweet"></tweet>
+</div>
+<div class="no-tweets" *ngIf="tweets?.length === 0">Pas de tweets</div>

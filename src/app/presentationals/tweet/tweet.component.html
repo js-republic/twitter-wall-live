@@ -1,0 +1,12 @@
+<div class="tweet">
+  <div class="avatar-side"><img src={{tweet?.avatar}} alt=""></div>
+  <div class="content-side">
+    <div class="author">{{tweet?.name}}</div>
+    <div class="creationDate tweet-content-element"><span>@{{tweet?.username}}</span><span> {{tweet?.creationDate | date}}</span></div>
+    <div class="tweet-text tweet-content-element">{{tweet?.text}}</div>
+    <div class="share-counters">
+      <span class="retweetCount tweet-content-element"><retweet class="social-icon"></retweet> {{tweet?.retweetCount}}</span>
+      <span class="likeCount tweet-content-element"><like class="social-icon"></like> {{tweet?.likeCount}}</span>
+    </div>
+  </div>
+</div>

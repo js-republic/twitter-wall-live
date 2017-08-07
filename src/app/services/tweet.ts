@@ -14,7 +14,6 @@ export class TweetService {
   tweet: Observable<Tweet> = this.tweetSource.asObservable()
   constructor() {
     socket.on("tweets", data => {
-      console.log(data)
       this.tweetSource.next(data.tweet)
     })
   }
