@@ -4,11 +4,12 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "per-env",
     "build": "ng build",
-    "start:dev": "stmux -m system -- [ [ 'yarn start:dev:server' : 'yarn start:dev:front' ] .. 'yarn test' ]",
-    "start:dev:server": "nodemon --exec ./node_modules/.bin/ts-node server --w server",
-    "start:dev:front": "ng build --watch",
+    "start:development": "stmux -m system -- [ [ 'yarn start:development:server' : 'yarn start:development:front' ] .. 'yarn test' ]",
+    "start:development:server": "nodemon --exec ./node_modules/.bin/ts-node server --w server",
+    "start:development:front": "ng build --watch",
+    "start:production": "ts-node server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,14 +25,19 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@types/node": "~6.0.60",
     "body-parser": "^1.17.2",
     "compression": "^1.7.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.4",
     "moment": "^2.18.1",
+    "per-env": "^1.0.2",
     "rxjs": "^5.4.1",
     "socket.io": "^2.0.3",
     "socket.io-client": "^2.0.3",
+    "ts-node": "~3.0.4",
     "twitter": "^1.7.1",
+    "typescript": "~2.3.3",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
@@ -40,7 +46,6 @@
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
     "faker": "^4.1.0",
     "jasmine-core": "~2.6.2",
@@ -54,8 +59,6 @@
     "nodemon": "^1.11.0",
     "protractor": "~5.1.2",
     "stmux": "^1.4.18",
-    "ts-node": "~3.0.4",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "tslint": "~5.3.2"
   }
 }
