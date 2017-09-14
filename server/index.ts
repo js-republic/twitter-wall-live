@@ -28,7 +28,7 @@ const app = express()
 const server = http.createServer(app)
 const io = new SocketIO(server)
 
-let updatedConfig = new Configuration("Javascript")
+let updatedConfig = new Configuration("jsStar")
 
 app.use(compression())
 app.use(bodyParser.json())
