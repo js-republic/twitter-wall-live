@@ -14,9 +14,8 @@ export class TweetService {
     const socket = io({
       path: '/tweet'
     });
-    socket.on('tweet', data => {
-      console.log(`Data is comming :: ${data}`);
-      this.tweetSource.next(data.tweet);
+    socket.on('tweet', (data: { tweet }) => {
+      this.tweetSource.next(Tweet.fromJSON(data.tweet));
     });
   }
 }

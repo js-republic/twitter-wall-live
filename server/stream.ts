@@ -14,15 +14,14 @@ const twitterPipes = [];
 const io: SocketIO = new SocketIO({ path: '/tweet' });
 
 function openTwitterStream(socket) {
-  console.log('New connection !');
   return setInterval(() => {
     socket.emit('tweet', {
       tweet: mock()
     })
-  }, 1000);
+  }, 5000);
 }
 
-export function create(server: Server): SocketIO {
+export function attach(server: Server): SocketIO {
   io.attach(server);
   io.on('connection', socket => twitterPipes.push({ socket, stream: openTwitterStream(socket) }));
   // si socket closed ou twtterSteeam closed => retirer de la list le pipe

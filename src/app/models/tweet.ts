@@ -1,13 +1,14 @@
 export class Tweet {
-  constructor(
-    public avatar: string,
-    public text: string,
-    public name: string,
-    public username: string,
-    public creationDate: number,
-    public likeCount: number,
-    public retweetCount: number
-  ) {}
+  constructor(public avatar: string,
+              public text: string,
+              public name: string,
+              public username: string,
+              public creationDate: number,
+              public likeCount: number,
+              public retweetCount: number,
+              public id: number = Date.now()) {
+  }
+
   static fromJSON(item) {
     return new Tweet(
       item.avatar,

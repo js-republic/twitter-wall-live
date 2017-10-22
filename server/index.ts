@@ -9,7 +9,7 @@ import { Configuration } from '../src/app/models/configuration';
 
 const app = express();
 const server = http.createServer(app);
-stream.create(server);
+stream.attach(server);
 let configuration = new Configuration(env.HASHTAG);
 
 app.use(compression());

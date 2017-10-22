@@ -1,0 +1,52 @@
+:host {
+  width: 90vw;
+  display: inline-block;
+  padding: 1rem;
+  margin : 1rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.93);
+  border-radius: 38px;
+  border: 1px solid tomato;
+  align-items: center;
+
+  .avatar-side {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    img {
+      border-radius: 50%;
+      height: 5em;
+      width: 5em;
+    }
+  }
+
+  .content-side {
+    width: 75%;
+    .author {
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .creationDate {
+      color: #448aff;
+      font-weight: 400;
+    }
+
+    .tweet-content-element {
+      margin-bottom: 15px;
+    }
+
+    span.tweet-content-element {
+      margin-right: 15px;
+      font-weight: 700;
+    }
+
+    .share-counters {
+      display: flex;
+      align-items: center;
+    }
+
+    .social-icon {
+      margin-right: 5px;
+    }
+  }
+}

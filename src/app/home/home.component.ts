@@ -8,7 +8,7 @@ import { TweetService } from './services/tweet.service';
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export default class TweetsPage {
   tweet: Observable<Tweet>;
