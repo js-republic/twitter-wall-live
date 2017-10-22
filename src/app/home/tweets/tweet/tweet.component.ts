@@ -1,6 +1,6 @@
-import { Tweet } from "../../models/tweet"
-import { Component, Input, OnInit, NgZone } from "@angular/core"
-import { Observable } from "rxjs/Observable"
+import { Tweet } from '../../../models/tweet'
+import { Component, Input } from '@angular/core'
+import { Observable } from 'rxjs/Observable'
 
 @Component({
   selector: "tweet",

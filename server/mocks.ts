@@ -1,11 +1,11 @@
-import * as faker from "faker"
-import { Tweet } from "../src/app/models/tweet"
+import * as faker from "faker";
+import { Tweet } from "../src/app/models/tweet";
 
-const TWEET_COUNT = 20
+const TWEET_COUNT = 20;
 
-const range = size => new Array(size).fill("")
+const range = size => new Array(size).fill("");
 
-export default new Tweet(
+export default () => new Tweet(
   faker.image.avatar(),
   faker.lorem.sentence(),
   faker.name.firstName(),
@@ -13,4 +13,4 @@ export default new Tweet(
   faker.date.recent(),
   faker.random.number(),
   faker.random.number()
-)
+);

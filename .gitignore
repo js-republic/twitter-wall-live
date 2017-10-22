@@ -10,6 +10,7 @@
 
 # IDEs and editors
 /.idea
+*.iml
 .project
 .classpath
 .c9/
@@ -41,4 +42,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-run.sh
+.env

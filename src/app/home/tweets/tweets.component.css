@@ -1,4 +1,4 @@
-.tweets-stream {
+.tweets {
   display: flex;
   flex-flow: row wrap;
   height: 100%;
@@ -8,14 +8,11 @@
 
 .tweet {
   color: #fff;
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
   font-weight: 300;
   font-size: 5rem;
-  /*max-width: 30.5%;*/
-  /*height: 28%;*/
   flex: 1;
   margin: 5px;
-  border-radius: 2px;
   padding: 1%;
   background: rgba(255, 255, 255, 0.13);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.93);
