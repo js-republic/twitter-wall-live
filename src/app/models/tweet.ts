@@ -5,8 +5,7 @@ export class Tweet {
               public username: string,
               public creationDate: number,
               public likeCount: number,
-              public retweetCount: number,
-              public id: number = Date.now()) {
+              public retweetCount: number) {
   }
 
   static fromJSON(item) {

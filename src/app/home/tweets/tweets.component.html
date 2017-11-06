@@ -1,8 +1,5 @@
-<div class="tweets-container">
-  <tweet *ngFor="let view of queue.content; trackBy: trackTweet;"
-         [tweet]="view.tweet"
-         [ngStyle]="{'margin-left': view.left+'%'}"
-  >
+<div class="tweets-container {{containerClass}}">
+  <tweet *ngFor="let view of queue.content; trackBy: trackTweet;" [tweet]="view.tweet">
   </tweet>
+  <div class="no-tweets" *ngIf="queue.length === 0">Pas de tweets</div>
 </div>
-<div class="no-tweets" *ngIf="queue.length === 0">Pas de tweets</div>

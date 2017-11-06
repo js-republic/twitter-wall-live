@@ -1,14 +1,8 @@
-import { Tweet } from '../../models/tweet'
-import { Component, Input, NgZone, OnInit } from '@angular/core'
-import { Observable } from 'rxjs/Observable'
-import CapedQueue from './CapedQueue';
-
-class TweetView {
-  constructor(public tweet: Tweet,
-              public index: number,
-              public left: number = 0) {
-  }
-}
+import { Tweet } from '../../models/tweet';
+import { TweetView } from '../../models/tweet-view';
+import { Component, Input, NgZone, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Fifo } from './tweet/fifo/Fifo';
 
 @Component({
   selector: 'tweets',
@@ -16,32 +10,39 @@ class TweetView {
   styleUrls: ['./tweets.component.scss']
 })
 export default class Tweets implements OnInit {
+
   @Input() tweet: Observable<Tweet>;
-  private queue: CapedQueue<TweetView> = new CapedQueue<TweetView>(3);
+  private queue: Fifo<TweetView> = new Fifo<TweetView>(3);
+  public containerClass: string;
 
   constructor(private zone: NgZone) {
-    this.queue.beforeShift.subscribe(this.willShiftTweet.bind(this));
-    this.queue.afterShift.subscribe(this.didShiftTweet.bind(this));
+    this.queue.beforePush = this.willShiftTweet.bind(this);
+    this.queue.afterPush = this.didShiftTweet.bind(this);
   }
 
   ngOnInit() {
-    this.tweet.subscribe((item: Tweet) => {
-      this.zone.run(() => {
-        this.queue.push(new TweetView(item, this.queue.length));
-      });
+    this.tweet.subscribe((item: Tweet) => this.zone.run(() =>
+      this.queue.push(new TweetView(item))
+    ));
+  }
+
+  willShiftTweet(): Promise<any> {
+    this.containerClass = 'willMove';
+    return new Promise(resolve => {
+      setTimeout(() => {
+          this.containerClass = 'didMoved';
+          resolve();
+        }, 2000
+      )
     });
+
   }
 
-  willShiftTweet(view: TweetView) {
-    //view.left = (this.queue.length >= 1 && view.index === 0) ? -70 : 0;
-    view.index--;
-  }
-
-  didShiftTweet(view: TweetView) {
-
+  didShiftTweet(): Promise<any> {
+    return Promise.resolve();
   }
 
   trackTweet(index, tweetView: TweetView) {
-    return tweetView.tweet.id;
+    return tweetView.id;
   }
 }

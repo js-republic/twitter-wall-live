@@ -1,8 +1,23 @@
+$tweetWidth: 85vw;
+$tweetMargin: 1vw;
+$willMoveMarginLeft: -1 * ($tweetWidth + (2 * $tweetMargin)+ 1.5vw);
+
 :host {
+  display: flex;
+  flex-direction: row;
   .tweets-container {
+    flex: 1;
     display: flex;
     flex-direction: row;
-    border : 1px solid olive;
-    padding: 1rem;
+    border: 1px solid olive;
+  }
+  .willMove {
+    tweet:nth-child(1) {
+      margin-left: $willMoveMarginLeft;
+    }
+  }
+  tweet {
+    width: $tweetWidth;
+    margin: $tweetMargin;
   }
 }

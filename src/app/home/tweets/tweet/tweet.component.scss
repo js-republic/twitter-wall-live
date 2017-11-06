@@ -1,12 +1,11 @@
 :host {
-  width: 90vw;
   display: inline-block;
   padding: 1rem;
-  margin : 1rem;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.93);
   border-radius: 38px;
   border: 1px solid tomato;
   align-items: center;
+  transition: 2s margin-left cubic-bezier(.66,0,.51,1);
 
   .avatar-side {
     width: 25%;
