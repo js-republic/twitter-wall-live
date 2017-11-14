@@ -4,7 +4,7 @@ export interface Idable {
 
 type ShiftHandler = (T) => Promise<any>
 
-export class Fifo<T extends Idable> {
+export class Queue<T extends Idable> {
   public content: T[];
   public beforePush?: ShiftHandler;
   public afterPush?: ShiftHandler;
@@ -26,7 +26,7 @@ export class Fifo<T extends Idable> {
   }
 
   async invokeHandlerIfExist (handler:ShiftHandler){
-    await handler ? handler(this.content) : Promise.resolve();
+    await handler ? handler([...this.content]) : Promise.resolve();
   }
 
   get length(): number {

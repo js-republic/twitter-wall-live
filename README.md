@@ -22,6 +22,13 @@ http://twitter-wall.eu-central-1.elasticbeanstalk.com/
 
 Le déploiment s'éffectue pour l'heure à la main par Mathieu.
 
+## Documentation
+
+Il est possible de générer une documentation de la partie front à l'aide de l'outils compodoc. Pour ce faire, taper la commande :
+- `yarn compodoc`
+
+Dans le terminal. Un dossier *documentation* va alors se créer à la racine du projet. A l'intérieur, vous retrouverez un *index.html* que vous pouvez ouvrir avec un navigateur et commencer l'exploration du projet Front.
+
 ## Reste à faire
 
 Non trié par ordre de priorité.

@@ -2,7 +2,7 @@ import { Tweet } from '../../models/tweet';
 import { TweetView } from '../../models/tweet-view';
 import { Component, Input, NgZone, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Fifo } from './tweet/fifo/Fifo';
+import { Queue } from './queue/Queue';
 
 @Component({
   selector: 'tweets',
@@ -12,7 +12,7 @@ import { Fifo } from './tweet/fifo/Fifo';
 export default class Tweets implements OnInit {
 
   @Input() tweet: Observable<Tweet>;
-  private queue: Fifo<TweetView> = new Fifo<TweetView>(3);
+  private queue: Queue<TweetView> = new Queue<TweetView>(3);
   public containerClass: string;
 
   constructor(private zone: NgZone) {
